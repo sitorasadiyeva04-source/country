@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Светлая тема по умолчанию */
+body {
+    background-color: #fafafa;
+    color: #111517;
+    padding: 20px 40px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Кнопка Dark Mode */
+#darkMod {
+    margin-top: 10px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* Поле поиска */
+#search {
+    margin: 20px 0 30px 0;
+    padding: 10px 14px;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    display: block;
+}
+
+/* Сетка для стран */
+#countries {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* Карточка страны */
+.country {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.country:hover {
+    transform: translateY(-4px);
+}
+
+/* Фиксируем размер картинок (флагов), чтобы они не растягивались */
+.country img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+}
+
+.country h3 {
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* =========================================
+   ТЕМНАЯ ТЕМА (Dark Mode)
+   ========================================= */
+
+body.active-dark {
+    background-color: #202c37;
+    color: #ffffff;
+}
+
+body.active-dark .country {
+    background-color: #2b3844;
+    color: #ffffff;
+}
+
+body.active-dark #search,
+body.active-dark #darkMod {
+    background-color: #2b3844;
+    color: #ffffff;
+    border-color: #3b4854;
+}
+
+body.active-dark #search::placeholder {
+    color: #ccc;
+}
